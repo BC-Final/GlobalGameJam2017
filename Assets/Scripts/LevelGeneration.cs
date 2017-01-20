@@ -12,10 +12,9 @@ public class LevelGeneration : MonoBehaviour {
 	[SerializeField]
 	private int _islandDistance;
 
-	private List<MapCube> frstPlayerIsland = new List<MapCube>();
-	private List<MapCube> scndPlayerIsland = new List<MapCube>();
+	public static List<MapCube> Tiles = new List<MapCube>();
 
-	private void Start() {
+	private void Awake() {
 		for (int p = -1; p <= 1; p += 2) {
 			for (int i = 0; i < _numberOfRows; ++i) {
 				for (int j = 0; j < _numberOfColums; ++j) {
@@ -24,19 +23,18 @@ public class LevelGeneration : MonoBehaviour {
 					go.transform.localScale = new Vector3(1, 3, 1);
 					go.transform.parent = transform;
 					go.AddComponent<MapCube>();
-					new GameObject("Probe").transform.parent = go.transform;
-					if (p < 0) {
-						frstPlayerIsland.Add(go.GetComponent<MapCube>());
-					} else {
-						scndPlayerIsland.Add(go.GetComponent<MapCube>());
-					}
+					GameObject probe = new GameObject("Probe");
+					probe.transform.parent = go.transform;
+					probe.transform.localPosition =  new Vector3(0f, 0.5f, 0f);
+					Tiles.Add(go.GetComponent<MapCube>());
 				}
 			}
 		}
 	}
 
+	/*
 	void Update () {
-		foreach (MapCube go in frstPlayerIsland) {
+		foreach (MapCube go in cubes) {
 			float dist = Vector3.Distance(go.transform.position, new Vector3(15, 0, 15));
 			if (dist < 10.0f) {
 				float angle = Vector3.Angle(go.transform.position -new Vector3(15, 0, 15), Vector3.forward);
@@ -60,4 +58,5 @@ public class LevelGeneration : MonoBehaviour {
 			}
 		}
 	}
+	*/
 }
