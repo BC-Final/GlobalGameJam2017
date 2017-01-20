@@ -36,7 +36,7 @@ public class LevelGeneration : MonoBehaviour {
 	}
 
 	void Update () {
-		foreach (MapCube go in frstPlayerIsland) {
+		foreach (MapCube go in scndPlayerIsland) {
 			float dist = Vector3.Distance(go.transform.position, new Vector3(15, 0, 15));
 			if (dist < 10.0f) {
 				float angle = Vector3.Angle(go.transform.position -new Vector3(15, 0, 15), Vector3.forward);
@@ -49,7 +49,7 @@ public class LevelGeneration : MonoBehaviour {
 					go.transform.position = pos;
 				} else {
 					Vector3 pos = go.transform.position;
-					pos.y = Mathf.Sin(-Time.time * 10 + dist);
+					pos.y = Mathf.Sin(-Time.time * 10 + dist)*1;
 					go.transform.position = pos;
 				}
 
