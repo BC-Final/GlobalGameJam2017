@@ -18,6 +18,7 @@ public class CharacterControls : MonoBehaviour
 	public float maxVelocityChangeInAir = 0.0f;
 	public bool canJump = true;
 	public float jumpHeight = 2.0f;
+	[SerializeField]
 	private bool grounded = false;
 
 
@@ -57,7 +58,7 @@ public class CharacterControls : MonoBehaviour
 			////Air Control
 			//
 			//// Calculate how fast we should be moving
-			Vector3 targetVelocity = new Vector3(Input.GetAxis(LeftStickHorizontal), 0, Input.GetAxis(LeftStickVertical));
+			Vector3 targetVelocity = new Vector3(Input.GetAxis(LeftStickHorizontal), GetComponent<Rigidbody>().velocity.y, Input.GetAxis(LeftStickVertical));
 			targetVelocity = transform.TransformDirection(targetVelocity);
 			targetVelocity *= speed;
 			//
@@ -67,8 +68,7 @@ public class CharacterControls : MonoBehaviour
 			velocityChange.x = Mathf.Clamp(velocityChange.x, -maxVelocityChangeInAir, maxVelocityChangeInAir);
 			velocityChange.z = Mathf.Clamp(velocityChange.z, -maxVelocityChangeInAir, maxVelocityChangeInAir);
 			velocityChange.y = 0;
-			Debug.Log(velocityChange);
-			GetComponent<Rigidbody>().AddForce(velocityChange, ForceMode.VelocityChange);
+			GetComponent<Rigidbody>().AddForce(velocityChange, ForceMode.Force);
 
 		}
 

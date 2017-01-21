@@ -41,8 +41,8 @@ public class GameController : MonoBehaviour {
 		_releaseTime = Time.time + _initialWaitTime;
 		_starting = true;
 
-		_playerOneRef = GameObject.Instantiate(_playerOnePrefab, _playerOneSpawnPoint.position, _playerOneSpawnPoint.rotation).transform;
-		_playerTwoRef = GameObject.Instantiate(_playerTwoPrefab, _playerTwoSpawnPoint.position, _playerTwoSpawnPoint.rotation).transform;
+		//_playerOneRef = GameObject.Instantiate(_playerOnePrefab, _playerOneSpawnPoint.position, _playerOneSpawnPoint.rotation).transform;
+		//_playerTwoRef = GameObject.Instantiate(_playerTwoPrefab, _playerTwoSpawnPoint.position, _playerTwoSpawnPoint.rotation).transform;
 		
 		//TODO Players should not be able to move when spawned
 	}

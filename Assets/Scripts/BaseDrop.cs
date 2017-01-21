@@ -56,7 +56,7 @@ public class BaseDrop : PlayerAbility
 	public override void Shoot()
 	{
 		base.Shoot();
-		GameObject go = GameObject.Instantiate(_projectilePrefab, transform.position, transform.rotation);
+		GameObject go = GameObject.Instantiate(_projectilePrefab, transform.position + _shotOffset, transform.rotation);
 		BaseProjectile bullet = go.GetComponent<BaseProjectile>();
 		bullet._lifeTime = _lifeTime;
 		bullet._speed = _speed;
