@@ -67,7 +67,6 @@ public class CharacterControls : MonoBehaviour
 			velocityChange.x = Mathf.Clamp(velocityChange.x, -maxVelocityChangeInAir, maxVelocityChangeInAir);
 			velocityChange.z = Mathf.Clamp(velocityChange.z, -maxVelocityChangeInAir, maxVelocityChangeInAir);
 			velocityChange.y = 0;
-			Debug.Log(velocityChange);
 			GetComponent<Rigidbody>().AddForce(velocityChange, ForceMode.VelocityChange);
 
 		}
