@@ -15,7 +15,11 @@ public class CharacterControls : MonoBehaviour
 	public float speed = 10.0f;
 	public float gravity = 10.0f;
 	public float maxVelocityChange = 10.0f;
-	public float maxVelocityChangeInAir = 0.0f;
+	[Range(0.0f, 100.0f)]
+	public float airControlPercent;
+	public float airControlThreshold;
+	[Range(0.0f, 1.0f)]
+	public float airControlLowCap;
 	public bool canJump = true;
 	public float jumpHeight = 2.0f;
 	[SerializeField]
@@ -58,17 +62,25 @@ public class CharacterControls : MonoBehaviour
 			////Air Control
 			//
 			//// Calculate how fast we should be moving
-			Vector3 targetVelocity = new Vector3(Input.GetAxis(LeftStickHorizontal), GetComponent<Rigidbody>().velocity.y, Input.GetAxis(LeftStickVertical));
+			Vector3 targetVelocity = new Vector3(Input.GetAxis(LeftStickHorizontal), 0, Input.GetAxis(LeftStickVertical));
 			targetVelocity = transform.TransformDirection(targetVelocity);
 			targetVelocity *= speed;
 			//
 			//// Apply a force that attempts to reach our target velocity
 			Vector3 velocity = GetComponent<Rigidbody>().velocity;
 			Vector3 velocityChange = (targetVelocity - velocity);
-			velocityChange.x = Mathf.Clamp(velocityChange.x, -maxVelocityChangeInAir, maxVelocityChangeInAir);
-			velocityChange.z = Mathf.Clamp(velocityChange.z, -maxVelocityChangeInAir, maxVelocityChangeInAir);
-			velocityChange.y = 0;
-			GetComponent<Rigidbody>().AddForce(velocityChange, ForceMode.Force);
+			Debug.Log("Vel : " + velocity.y);
+			//velocityChange.x = Mathf.Clamp(velocityChange.x, -airControlPercent * airControlPercent / 100 * Mathf.Clamp(velocity.magnitude / airControlThreshold, 0, 1), airControlPercent * airControlPercent / 100 * Mathf.Clamp(velocity.magnitude / airControlThreshold, 0, 1));
+			//velocityChange.z = Mathf.Clamp(velocityChange.z, -airControlPercent * airControlPercent / 100 * Mathf.Clamp(velocity.magnitude / airControlThreshold, 0, 1), airControlPercent * airControlPercent / 100 * Mathf.Clamp(velocity.magnitude / airControlThreshold, 0, 1));
+			velocityChange.x = Mathf.Clamp(velocityChange.x * (Mathf.Clamp(1 - Mathf.Clamp(velocity.magnitude / airControlThreshold, 0, 1), airControlLowCap, 1)), -maxVelocityChange, maxVelocityChange);
+			velocityChange.z = Mathf.Clamp(velocityChange.z * (Mathf.Clamp(1 - Mathf.Clamp(velocity.magnitude / airControlThreshold, 0, 1), airControlLowCap, 1)), -maxVelocityChange, maxVelocityChange);
+			if(velocity.y > 20)
+			{
+				velocityChange.y = Mathf.Clamp(velocityChange.y ,-maxVelocityChange, maxVelocityChange);
+			}else{
+				velocityChange.y = 0;
+			}
+			GetComponent<Rigidbody>().AddForce(velocityChange, ForceMode.VelocityChange);
 
 		}
 

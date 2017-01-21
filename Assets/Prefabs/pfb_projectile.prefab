@@ -38,6 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4117930310687822}
   - component: {fileID: 114400680786472058}
+  - component: {fileID: 135681607280526718}
   m_Layer: 0
   m_Name: pfb_projectile
   m_TagString: Untagged
@@ -68,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1290384436171784}
   m_LocalRotation: {x: -0, y: 0.19677776, z: -0, w: 0.9804481}
-  m_LocalPosition: {x: -5.500355, y: 7.4591713, z: 17.839294}
+  m_LocalPosition: {x: 31.235611, y: 6.629992, z: 27.472897}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4242456633053016}
@@ -172,6 +173,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 20
   _lifeTime: 100
+  _force: 100
+  owner: {fileID: 0}
+--- !u!135 &135681607280526718
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1290384436171784}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.75
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135691016502480094
 SphereCollider:
   m_ObjectHideFlags: 1
