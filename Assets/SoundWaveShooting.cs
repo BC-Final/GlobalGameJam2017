@@ -41,6 +41,6 @@ public class SoundWaveShooting : PlayerAbility {
 	public override void Shoot()
 	{
 		base.Shoot();
-		GameObject.Instantiate(_projectilePrefab, transform.position, transform.rotation);
+		GameObject.Instantiate(_projectilePrefab, transform.position + _shotOffset, transform.rotation);
 	}
 }

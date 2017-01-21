@@ -7,6 +7,9 @@ public class PlayerAbility : MonoBehaviour {
 	[SerializeField]
 	protected string fireButton;
 
+	[SerializeField]
+	public Vector3 _shotOffset;
+
 	public int ammo;
 	public int maxAmmo = 1;
 
