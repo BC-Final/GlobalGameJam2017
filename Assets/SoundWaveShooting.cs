@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundWaveShooting : MonoBehaviour {
+public class SoundWaveShooting : PlayerAbility {
+
 	[SerializeField]
 	private GameObject _projectilePrefab;
 
@@ -19,20 +20,27 @@ public class SoundWaveShooting : MonoBehaviour {
 		_timer = 0.0f;
 	}
 
-	private void Update () {
+	protected void Update () {
+		base.Update();
 		_timer += Time.deltaTime;
 
-		if (_timer > _time) {
+		if (_timer > _time && ammo > 0) {
 			_timer -= _time;
 
-			if (Input.GetMouseButton(0) || _pressed) {
-				GameObject.Instantiate(_projectilePrefab, transform.position, transform.rotation);
+			if (Input.GetButton(fireButton) || _pressed) {
+				Shoot();
 				_pressed = false;
 			}
-		} else {
-			if (Input.GetMouseButton(0)) {
+		} else if(ammo > 0){
+			if (Input.GetButton(fireButton)) {
 				_pressed = true;
 			}
 		}
+	}
+
+	public override void Shoot()
+	{
+		base.Shoot();
+		GameObject.Instantiate(_projectilePrefab, transform.position, transform.rotation);
 	}
 }

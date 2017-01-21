@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class PlayerRotationTesting : MonoBehaviour {
 	void Update () {
-		transform.Rotate(new Vector3(0, 1, 0), Input.GetAxis("Horizontal") * 5f);
+		//transform.Rotate(new Vector3(0, 1, 0), Input.GetAxis("Horizontal") * 5f);
 	}
 }
