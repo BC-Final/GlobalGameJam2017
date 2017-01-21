@@ -65,7 +65,11 @@ public class MapCube : MonoBehaviour {
 
 	public void SetPosition (float pY) {
 		if (_health > 0.0f) {
-			_rigidbody.MovePosition(new Vector3(_rigidbody.position.x, pY, _rigidbody.position.z));
+			if (LevelManager.Instance.Building) {
+				transform.localPosition = new Vector3(0.0f, pY, 0.0f);
+			} else {
+				_rigidbody.MovePosition(ProbePosition.TransformPoint(new Vector3(0.0f, pY, 0.0f)));
+			}
 		}
 	}
 }

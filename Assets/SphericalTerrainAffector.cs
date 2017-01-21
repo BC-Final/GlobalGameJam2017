@@ -43,7 +43,7 @@ public class SphericalTerrainAffector : MonoBehaviour {
 		_affectedCubes.Clear();
 
 		if (_endTime - Time.time > 0.0f || _duration < 0) {
-			foreach (MapCube c in LevelManager.Cubes) {
+			foreach (MapCube c in LevelManager.Instance.Cubes) {
 				float dist = Vector3.Distance(c.ProbePosition.position, transform.position);
 
 				if (dist < _radius) {
