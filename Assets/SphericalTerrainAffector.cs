@@ -43,7 +43,7 @@ public class SphericalTerrainAffector : MonoBehaviour {
 		_affectedCubes.Clear();
 
 		if (_endTime - Time.time > 0.0f || _duration < 0) {
-			foreach (MapCube c in LevelGeneration.Tiles) {
+			foreach (MapCube c in LevelManager.Cubes) {
 				float dist = Vector3.Distance(c.ProbePosition.position, transform.position);
 
 				if (dist < _radius) {
@@ -74,6 +74,7 @@ public class SphericalTerrainAffector : MonoBehaviour {
 			GameObject.Destroy(gameObject);
 			//TODO Make it fade out;
 		}
+
 
 		foreach (KeyValuePair<MapCube, float> pair in temp) {
 			if (!_affectedCubes.ContainsKey(pair.Key)) {

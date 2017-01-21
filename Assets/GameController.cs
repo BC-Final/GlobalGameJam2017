@@ -31,8 +31,8 @@ public class GameController : MonoBehaviour {
 		_releaseTime = Time.time + _initialWaitTime;
 		_starting = true;
 
-		_playerOneRef = GameObject.Instantiate(_playerOnePrefab, _playerOneSpawnPoint.position, _playerOneSpawnPoint.rotation).transform;
-		_playerTwoRef = GameObject.Instantiate(_playerTwoPrefab, _playerTwoSpawnPoint.position, _playerTwoSpawnPoint.rotation).transform;
+		//_playerOneRef = GameObject.Instantiate(_playerOnePrefab, _playerOneSpawnPoint.position, _playerOneSpawnPoint.rotation).transform;
+		//_playerTwoRef = GameObject.Instantiate(_playerTwoPrefab, _playerTwoSpawnPoint.position, _playerTwoSpawnPoint.rotation).transform;
 		//TODO Players should not be able to move when spawned
 	}
 
@@ -51,6 +51,7 @@ public class GameController : MonoBehaviour {
 		_playerTwoRef.rotation = _playerTwoSpawnPoint.rotation;
 		//TODO Restrict players movement
 
+		//SUGGESTION Maybe destroy the map by explosing it??
 		UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("scn_map");
 		UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("scn_map", UnityEngine.SceneManagement.LoadSceneMode.Additive);
 		//TODO Unload and load the map scene
