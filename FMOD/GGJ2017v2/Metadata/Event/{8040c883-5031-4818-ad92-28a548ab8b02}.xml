@@ -5,7 +5,7 @@
             <value>projectile</value>
         </property>
         <property name="outputFormat">
-            <value>2</value>
+            <value>1</value>
         </property>
         <relationship name="mixer">
             <destination>{26501f52-6b21-4297-a996-c5fc6c5a5605}</destination>
@@ -116,7 +116,6 @@
     <object class="MixerBusEffectChain" id="{24e887e6-dbe2-4305-b610-180527a113c9}">
         <relationship name="effects">
             <destination>{4a90fabc-ad85-42e9-b1d3-f2ed2cc218b5}</destination>
-            <destination>{5fd6cb35-2870-427d-880c-634edf6aff1f}</destination>
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{cc851b49-c5c0-4e95-b2d3-80cd1917c520}"/>
@@ -128,6 +127,5 @@
     </object>
     <object class="MixerBusPanner" id="{a734e9d0-0524-4ffa-9993-618647497edc}"/>
     <object class="MixerBusFader" id="{4a90fabc-ad85-42e9-b1d3-f2ed2cc218b5}"/>
-    <object class="SpatialiserEffect" id="{5fd6cb35-2870-427d-880c-634edf6aff1f}"/>
     <object class="MixerBusFader" id="{46145a14-8ca1-45ea-9abd-d0e8a9d941bd}"/>
 </objects>
