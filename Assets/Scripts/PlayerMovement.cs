@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
 	public float speed;
 	public float maxSpeed;
 	public float grip;
+	public float xzInertia;
 
 	private Vector3 movement;
 	//public float tilt;
@@ -23,11 +24,26 @@ public class PlayerMovement : MonoBehaviour
 		float moveHorizontal = Input.GetAxis("Horizontal") * speed;
 		float moveVertical = Input.GetAxis("Vertical") * speed;
 
-		Vector3 targetSpeed = new Vector3(moveHorizontal, 0.0f, moveVertical);
-		movement = Vector3.Lerp(movement, targetSpeed, Time.deltaTime * grip);
-		movement = Vector3.ClampMagnitude(movement , maxSpeed);
+		Vector3 targetSpeed = new Vector3(moveHorizontal, 0, moveVertical);
 
-		GetComponent<Rigidbody>().velocity = movement;
+		Rigidbody rb = GetComponent<Rigidbody>();
+		float y = rb.velocity.y;
+		
+
+		movement = Vector3.Lerp(movement, targetSpeed, Time.deltaTime * grip);
+
+		//movement = Vector3.ClampMagnitude(movement , maxSpeed);
+
+		//movement.y = y;
+
+		GetComponent<Rigidbody>().velocity += movement;
+
+		//inertia
+		float newX = GetComponent<Rigidbody>().velocity.x * 0.6f;
+		float newY = GetComponent<Rigidbody>().velocity.y * 1f;
+		float newZ = GetComponent<Rigidbody>().velocity.z * 0.6f;
+
+		GetComponent<Rigidbody>().velocity = new Vector3(newX, newY, newZ);
 
 		//GetComponent<Rigidbody>().position = new Vector3
 		//(

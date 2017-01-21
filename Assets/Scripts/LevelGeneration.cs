@@ -23,6 +23,8 @@ public class LevelGeneration : MonoBehaviour {
 					go.transform.localScale = new Vector3(1, 3, 1);
 					go.transform.parent = transform;
 					go.AddComponent<MapCube>();
+					go.AddComponent<Rigidbody>().useGravity = false;
+					go.GetComponent<Rigidbody>().isKinematic = true;
 					GameObject probe = new GameObject("Probe");
 					probe.transform.parent = go.transform;
 					probe.transform.localPosition =  new Vector3(0f, 0.5f, 0f);
