@@ -26,6 +26,9 @@ public class GameController : MonoBehaviour {
 	[SerializeField]
 	private float _deadHeight = -2.0f;
 
+	[SerializeField]
+	private float _destroyTime = 3.0f;
+
 	private bool _starting;
 	private float _releaseTime;
 
@@ -61,7 +64,7 @@ public class GameController : MonoBehaviour {
 		}
 	}
 
-	public void RestartLevel () {
+	private void RestartLevel () {
 		_starting = true;
 		_playerOneRef.position = _playerOneSpawnPoint.position;
 		_playerOneRef.rotation = _playerOneSpawnPoint.rotation;
@@ -72,10 +75,14 @@ public class GameController : MonoBehaviour {
 		_playerTwoRef.GetComponentInChildren<Rigidbody>().velocity = Vector3.zero;
 		//TODO Restrict players movement
 
-		//SUGGESTION Maybe destroy the map by exploding it??
+		Timers.CreateTimer().SetCallback(() => FinishRestart()).SetTime(_destroyTime).Start();
+		LevelManager.Instance.Cubes.ForEach(x => x.Damage(1000.0f));
+		//TODO Maybe destroy the map by exploding it??
+	}
+
+	private void FinishRestart () {
+		_releaseTime = Time.time + _respawnWaitTime;
 		UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("scn_map");
 		UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("scn_map", UnityEngine.SceneManagement.LoadSceneMode.Additive);
-
-		_releaseTime = Time.time + _respawnWaitTime;
 	}
 }
