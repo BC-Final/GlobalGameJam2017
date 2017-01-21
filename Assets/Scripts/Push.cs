@@ -11,6 +11,14 @@ public class Push : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+		//Vector3 point = ray.origin + (ray.direction * distance);
+		//Debug.Log("World point " + point);
+
+		RaycastHit hit;
+		if (Physics.Raycast(ray, out hit))
+		{
+			GameObject.FindObjectOfType<Player>();
+		}
 	}
 }
