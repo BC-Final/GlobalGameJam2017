@@ -1,18 +1,17 @@
 fileFormatVersion: 2
-guid: 92df495c06189054e838d3cf1d37bdb6
-timeCreated: 1485015364
+guid: a290303e82f725b48b620f130bbc9d89
+timeCreated: 1485035446
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: SpeakerMasks
+    100000: Mask1_group1
     100002: //RootNode
-    400000: SpeakerMasks
+    400000: Mask1_group1
     400002: //RootNode
-    2300000: SpeakerMasks
-    3300000: SpeakerMasks
-    4300000: SpeakerMasks
-    9500000: //RootNode
+    2300000: Mask1_group1
+    3300000: Mask1_group1
+    4300000: Mask1_group1
   materials:
     importMaterials: 1
     materialName: 0
