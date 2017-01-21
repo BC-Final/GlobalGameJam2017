@@ -577,7 +577,7 @@
     </object>
     <object class="GameParameter" id="{995a014b-736f-4a02-b9da-e7dae3a15b4e}">
         <property name="name">
-            <value>shotsmedium</value>
+            <value>shots</value>
         </property>
     </object>
     <object class="GameParameter" id="{353ce9fd-b74d-46b1-b6e6-4cba7f3043fa}">
