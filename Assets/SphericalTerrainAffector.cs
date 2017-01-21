@@ -28,20 +28,14 @@ public class SphericalTerrainAffector : MonoBehaviour {
 	private Dictionary<MapCube, float> _affectedCubes = new Dictionary<MapCube, float>();
 
 	private void Start () {
-
 		_endTime = Time.time + _duration;
 	}
 
-	private void Update () {
-		/*
-		foreach (KeyValuePair<MapCube, float> c in _affectedCubes) {
-			Vector3 pos = c.Key.transform.position;
-			//pos.y = Mathf.Sin((-Time.time * _waveSpeed + c.Value) / _waveLength) *_waveHeight / c.Value;
-			pos.y = 0f;
-			c.Key.transform.position = pos;
-		}
-		*/
+	private void OnDrawGizmos () {
+		Gizmos.DrawWireSphere(transform.position, _radius);
+	}
 
+	private void Update () {
 		Dictionary<MapCube, float> temp = new Dictionary<MapCube, float>(_affectedCubes);
 		_affectedCubes.Clear();
 
@@ -50,8 +44,8 @@ public class SphericalTerrainAffector : MonoBehaviour {
 				float dist = Vector3.Distance(c.ProbePosition.position, transform.position);
 
 				if (dist < _radius) {
-					float angle = Vector3.Angle(c.transform.position - transform.position, transform.forward);
-					float sign = Mathf.Sign(Vector3.Dot(c.transform.position - transform.position, transform.right));
+					float angle = Vector3.Angle(c.ProbePosition.position - transform.position, transform.forward);
+					float sign = Mathf.Sign(Vector3.Dot(c.ProbePosition.position - transform.position, transform.right));
 					float finalAngle = sign * angle;
 
 					if ((finalAngle <= _angle / 2f && finalAngle >= -_angle / 2f)) {
@@ -62,17 +56,17 @@ public class SphericalTerrainAffector : MonoBehaviour {
 			}
 
 			foreach (KeyValuePair<MapCube, float> c in _affectedCubes) {
-				Vector3 pos = c.Key.transform.position;
+				Vector3 pos = c.Key.RigidBody.position;
 				//pos.y = Mathf.Sin((-Time.time * _waveSpeed + c.Value) / _waveLength) *_waveHeight / c.Value;
 				pos.y = Mathf.Sin((((_moveInwards ? 1f : -1f) * Time.time) * _waveSpeed + c.Value) / _waveLength) * _waveHeight;
-				c.Key.transform.position = pos;
+				c.Key.RigidBody.position = pos;
 			}
 		} else {
 			foreach (KeyValuePair<MapCube, float> c in _affectedCubes) {
-				Vector3 pos = c.Key.transform.position;
+				Vector3 pos = c.Key.RigidBody.position;
 				//pos.y = Mathf.Sin((-Time.time * _waveSpeed + c.Value) / _waveLength) *_waveHeight / c.Value;
 				pos.y = 0.0f;
-				c.Key.transform.position = pos;
+				c.Key.RigidBody.position = pos;
 			}
 
 			GameObject.Destroy(gameObject);

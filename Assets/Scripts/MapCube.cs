@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class MapCube : MonoBehaviour {
 	public Transform ProbePosition;
+	public Rigidbody RigidBody;
 
-	private float _fadeTime = 0.5f;
+	private float _fadeTime = 1.5f;
 	private float _timer;
 
 	private bool _fade;
 	private float _startHeight;
 
 	private void Start () {
-		ProbePosition = GetComponentInChildren<Transform>();
+		ProbePosition = transform.parent.transform;
+		RigidBody = GetComponent<Rigidbody>();
 	}
 
 	private void Update () {
@@ -26,10 +28,10 @@ public class MapCube : MonoBehaviour {
 			float perc = _timer / _fadeTime;
 			float currentHeight = _startHeight * (1.0f - perc);
 
-			Vector3 pos = transform.position;
+			Vector3 pos = RigidBody.position;
 			//pos.y = Mathf.Sin((-Time.time * _waveSpeed + c.Value) / _waveLength) *_waveHeight / c.Value;
 			pos.y = Mathf.Sin(Time.time * 10) * currentHeight;
-			transform.position = pos;
+			RigidBody.position = pos;
 
 			//transform.position = Vector3.Lerp(_startHeight, 0.0f, perc);
 		}
@@ -42,6 +44,6 @@ public class MapCube : MonoBehaviour {
 	public void FadeOut () {
 		_fade = true;
 		_timer = 0.0f;
-		_startHeight = transform.position.y;
+		_startHeight = RigidBody.position.y;
 	}
 }
