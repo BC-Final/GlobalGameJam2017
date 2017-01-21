@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
 	private Vector3 movement;
 	//public float tilt;
+	public float tilt;
 	//public Boundary boundary;
 
 	void FixedUpdate()
@@ -34,10 +35,6 @@ public class PlayerMovement : MonoBehaviour
 		//	0.0f,
 		//	Mathf.Clamp(GetComponent<Rigidbody>().position.z, boundary.zMin, boundary.zMax)
 		//);
-
-		//Inertia
-		//GetComponent<Rigidbody>().velocity *= 0.95f;
-
 		//GetComponent<Rigidbody>().rotation = Quaternion.Euler(0.0f, 0.0f, GetComponent<Rigidbody>().velocity.x * -tilt);
 	}
 }
