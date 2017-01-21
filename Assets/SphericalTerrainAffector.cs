@@ -24,6 +24,9 @@ public class SphericalTerrainAffector : MonoBehaviour {
 	[SerializeField]
 	private bool _moveInwards;
 
+	[SerializeField]
+	private float _damagePerS;
+
 	private float _endTime;
 	private Dictionary<MapCube, float> _affectedCubes = new Dictionary<MapCube, float>();
 
@@ -39,7 +42,7 @@ public class SphericalTerrainAffector : MonoBehaviour {
 		Dictionary<MapCube, float> temp = new Dictionary<MapCube, float>(_affectedCubes);
 		_affectedCubes.Clear();
 
-		if (_endTime - Time.time > 0.0f) {
+		if (_endTime - Time.time > 0.0f || _duration < 0) {
 			foreach (MapCube c in LevelGeneration.Tiles) {
 				float dist = Vector3.Distance(c.ProbePosition.position, transform.position);
 
@@ -56,18 +59,15 @@ public class SphericalTerrainAffector : MonoBehaviour {
 			}
 
 			foreach (KeyValuePair<MapCube, float> c in _affectedCubes) {
-				Vector3 pos = c.Key.RigidBody.position;
 				//pos.y = Mathf.Sin((-Time.time * _waveSpeed + c.Value) / _waveLength) *_waveHeight / c.Value;
-				pos.y = Mathf.Sin((((_moveInwards ? 1f : -1f) * Time.time) * _waveSpeed + c.Value) / _waveLength) * _waveHeight;
-				c.Key.RigidBody.MovePosition(pos);
+				c.Key.SetPosition(Mathf.Sin((((_moveInwards ? 1f : -1f) * Time.time) * _waveSpeed + c.Value) / _waveLength) * _waveHeight);
+				c.Key.Damage(_damagePerS * Time.deltaTime);
 				//c.Key.RigidBody.position = pos;
 			}
 		} else {
 			foreach (KeyValuePair<MapCube, float> c in _affectedCubes) {
-				Vector3 pos = c.Key.RigidBody.position;
 				//pos.y = Mathf.Sin((-Time.time * _waveSpeed + c.Value) / _waveLength) *_waveHeight / c.Value;
-				pos.y = 0.0f;
-				c.Key.RigidBody.MovePosition(pos);
+				c.Key.FadeOut();
 				//c.Key.RigidBody.position = pos;
 			}
 

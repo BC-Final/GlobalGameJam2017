@@ -4,7 +4,19 @@ using UnityEngine;
 
 public class LevelGeneration : MonoBehaviour {
 	[SerializeField]
+	private GameObject _prefab;
+
+	[SerializeField]
 	private int _numberOfRows;
+
+	[SerializeField]
+	private float _verticalDistance;
+
+	[SerializeField]
+	private float _horizontalDistance;
+
+	[SerializeField]
+	private float _rowOffset;
 
 	[SerializeField]
 	private int _numberOfColums;
@@ -18,6 +30,7 @@ public class LevelGeneration : MonoBehaviour {
 		for (int p = -1; p <= 1; p += 2) {
 			for (int i = 0; i < _numberOfRows; ++i) {
 				for (int j = 0; j < _numberOfColums; ++j) {
+					/*
 					GameObject probe = new GameObject("Probe");
 					probe.transform.parent = transform;
 					probe.transform.localPosition =  new Vector3(p * (i + _islandDistance), 0, j);
@@ -29,8 +42,17 @@ public class LevelGeneration : MonoBehaviour {
 					go.AddComponent<MapCube>();
 					go.AddComponent<Rigidbody>().isKinematic = true;
 					go.GetComponent<Rigidbody>().useGravity = false;
+					*/
 
-					Tiles.Add(go.GetComponent<MapCube>());
+					Vector3 pos = new Vector3(
+						p * (i * _verticalDistance + _islandDistance),
+						0,
+						j * _horizontalDistance + (i % 2 == 0 ? _rowOffset : 0)
+						);
+
+					GameObject go = GameObject.Instantiate(_prefab, pos, Quaternion.identity, transform);
+
+					Tiles.Add(go.GetComponentInChildren<MapCube>());
 				}
 			}
 		}
