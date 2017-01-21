@@ -59,14 +59,16 @@ public class SphericalTerrainAffector : MonoBehaviour {
 				Vector3 pos = c.Key.RigidBody.position;
 				//pos.y = Mathf.Sin((-Time.time * _waveSpeed + c.Value) / _waveLength) *_waveHeight / c.Value;
 				pos.y = Mathf.Sin((((_moveInwards ? 1f : -1f) * Time.time) * _waveSpeed + c.Value) / _waveLength) * _waveHeight;
-				c.Key.RigidBody.position = pos;
+				c.Key.RigidBody.MovePosition(pos);
+				//c.Key.RigidBody.position = pos;
 			}
 		} else {
 			foreach (KeyValuePair<MapCube, float> c in _affectedCubes) {
 				Vector3 pos = c.Key.RigidBody.position;
 				//pos.y = Mathf.Sin((-Time.time * _waveSpeed + c.Value) / _waveLength) *_waveHeight / c.Value;
 				pos.y = 0.0f;
-				c.Key.RigidBody.position = pos;
+				c.Key.RigidBody.MovePosition(pos);
+				//c.Key.RigidBody.position = pos;
 			}
 
 			GameObject.Destroy(gameObject);
