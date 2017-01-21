@@ -39,9 +39,19 @@ public class PlayerMovement : MonoBehaviour
 		GetComponent<Rigidbody>().velocity += movement;
 
 		//inertia
-		float newX = GetComponent<Rigidbody>().velocity.x * 0.6f;
+		float newX = GetComponent<Rigidbody>().velocity.x;
+		float newZ = GetComponent<Rigidbody>().velocity.z;
+
+		Debug.Log(GetComponent<Rigidbody>().velocity);
+		if (newX > maxSpeed || newX < -maxSpeed)
+		{
+			newX *= 0.9f;
+		}
 		float newY = GetComponent<Rigidbody>().velocity.y * 1f;
-		float newZ = GetComponent<Rigidbody>().velocity.z * 0.6f;
+		if (newZ > maxSpeed || newZ < -maxSpeed)
+		{
+			newZ *= 0.9f;
+		}
 
 		GetComponent<Rigidbody>().velocity = new Vector3(newX, newY, newZ);
 
