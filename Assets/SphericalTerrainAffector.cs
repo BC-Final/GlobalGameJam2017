@@ -41,6 +41,14 @@ public class SphericalTerrainAffector : MonoBehaviour {
 		Gizmos.DrawWireSphere(transform.position, _radius);
 	}
 
+	private void OnDestroy () {
+		foreach (KeyValuePair<MapCube, float> c in _affectedCubes) {
+			//pos.y = Mathf.Sin((-Time.time * _waveSpeed + c.Value) / _waveLength) *_waveHeight / c.Value;
+			c.Key.FadeOut();
+			//c.Key.RigidBody.position = pos;
+		}
+	}
+
 	private void Update () {
 		Dictionary<MapCube, float> temp = new Dictionary<MapCube, float>(_affectedCubes);
 		_affectedCubes.Clear();

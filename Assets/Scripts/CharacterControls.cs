@@ -11,6 +11,8 @@ public class CharacterControls : MonoBehaviour
 	public string LeftStickHorizontal;
 	[SerializeField]
 	public string LeftStickVertical;
+	[SerializeField]
+	public string Jump;
 
 	public float speed = 10.0f;
 	public float gravity = 10.0f;
@@ -52,7 +54,7 @@ public class CharacterControls : MonoBehaviour
 			GetComponent<Rigidbody>().AddForce(velocityChange, ForceMode.VelocityChange);
 
 			// Jump
-			if (canJump && Input.GetButton("Jump"))
+			if (canJump && Input.GetButton(Jump))
 			{
 				GetComponent<Rigidbody>().velocity = new Vector3(velocity.x, CalculateJumpVerticalSpeed(), velocity.z);
 			}

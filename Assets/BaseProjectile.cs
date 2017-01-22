@@ -31,7 +31,7 @@ public class BaseProjectile : MonoBehaviour {
 				{
 					
 					Vector3 force = (hit.gameObject.transform.position - this.transform.position);
-					
+					force.y = Mathf.Clamp(force.y, 0, 100);
 					float forcePerc = 1-(Mathf.Clamp(force.magnitude,0,_explosionRange) / _explosionRange);
 
 					//force.y = force.y * 2;

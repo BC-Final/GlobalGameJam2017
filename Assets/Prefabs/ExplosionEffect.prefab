@@ -94,7 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetSize: 20
   animTime: 0.2
-  colorFadeTime: 1.2
+  colorFadeTime: 0.8
   material: {fileID: 0}
 --- !u!135 &135874830812539216
 SphereCollider:

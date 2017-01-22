@@ -256,7 +256,7 @@ MonoBehaviour:
   _icon: {fileID: 0}
   _projectilePrefab: {fileID: 1290384436171784, guid: a24c6cd8a95c70e4d86aa1547224a302,
     type: 2}
-  force: 3000
+  force: 10000
   speed: 10
   _bpm: 130
 --- !u!114 &114903475935235330
@@ -272,14 +272,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftStickHorizontal: Horizontal
   LeftStickVertical: Vertical
+  Jump: j1Jump
   speed: 10
   gravity: 10
   maxVelocityChange: 10
   airControlPercent: 0
   airControlThreshold: 5
   airControlLowCap: 0.05
-  canJump: 0
-  jumpHeight: 2
+  canJump: 1
+  jumpHeight: 60
   grounded: 0
 --- !u!114 &114956514924900720
 MonoBehaviour:

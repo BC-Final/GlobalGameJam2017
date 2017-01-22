@@ -26,7 +26,9 @@ public class PlayerAbility : MonoBehaviour {
 	
 	// Update is called once per frame
 	protected void Update () {
-		_cooldownTimer += Time.deltaTime;
+		if(ammo < maxAmmo) {
+			_cooldownTimer += Time.deltaTime;
+		}
 		_icon.Step(_cooldownTimer, cooldown, ammo, maxAmmo);
 		if(_cooldownTimer > cooldown)
 		{

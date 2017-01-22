@@ -21,6 +21,8 @@ public class Projectile : MonoBehaviour {
 		if (other.GetComponent<Player>() && other.GetComponent<Player>() != owner)
 		{
 			Vector3 targetVector = (other.transform.position - this.transform.position);
+			targetVector.y = Mathf.Clamp(targetVector.y, 0, 100);
+			targetVector.Normalize();
 			other.GetComponent<Rigidbody>().AddForce(targetVector * _force);
 			GameObject.Destroy(this.gameObject);
 		}

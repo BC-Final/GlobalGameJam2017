@@ -57,7 +57,7 @@ public class BaseDrop : PlayerAbility
 	{
 		FMODUnity.RuntimeManager.PlayOneShot("event:/projectile");
 		base.Shoot();
-		GameObject go = GameObject.Instantiate(_projectilePrefab, transform.position + _shotOffset, transform.rotation);
+		GameObject go = GameObject.Instantiate(_projectilePrefab, transform.position + transform.TransformDirection(_shotOffset), transform.rotation);
 		BaseProjectile bullet = go.GetComponent<BaseProjectile>();
 		bullet._lifeTime = _lifeTime;
 		bullet._speed = _speed;

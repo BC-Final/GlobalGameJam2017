@@ -36,7 +36,9 @@ public class SoundWaveShooting : PlayerAbility {
 			_timer -= _time;
 
 			if (Input.GetButton(fireButton)/* || _pressed*/) {
-				if(!holding)
+				GetComponentInChildren<Animator>().SetBool("Shooting", true);
+
+				if (!holding)
 					MusicManager.Instance.StartShot();
 
 				holding = true;
@@ -51,6 +53,7 @@ public class SoundWaveShooting : PlayerAbility {
 
 		if (Input.GetButtonUp(fireButton) && holding) {
 			holding = false;
+			GetComponentInChildren<Animator>().SetBool("Shooting", false);
 			MusicManager.Instance.StopShot();
 		}
 	}
@@ -58,7 +61,7 @@ public class SoundWaveShooting : PlayerAbility {
 	public override void Shoot()
 	{
 		base.Shoot();
-		GameObject go = GameObject.Instantiate(_projectilePrefab, transform.position + _shotOffset, transform.rotation);
+		GameObject go = GameObject.Instantiate(_projectilePrefab, transform.position + transform.TransformDirection(_shotOffset), transform.rotation);
 		Projectile bullet = go.GetComponent<Projectile>();
 		bullet.owner = GetComponentInParent<Player>();
 		bullet._force = force;
