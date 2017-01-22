@@ -6,6 +6,10 @@ public class SoundWaveShooting : PlayerAbility {
 
 	[SerializeField]
 	private GameObject _projectilePrefab;
+	[SerializeField]
+	public float force;
+	[SerializeField]
+	public float speed;
 
 	[SerializeField]
 	private float _bpm;
@@ -54,7 +58,11 @@ public class SoundWaveShooting : PlayerAbility {
 	public override void Shoot()
 	{
 		base.Shoot();
-		GameObject.Instantiate(_projectilePrefab, transform.position + _shotOffset, transform.rotation);
+		GameObject go = GameObject.Instantiate(_projectilePrefab, transform.position + _shotOffset, transform.rotation);
+		Projectile bullet = go.GetComponent<Projectile>();
+		bullet.owner = GetComponentInParent<Player>();
+		bullet._force = force;
+		bullet._speed = speed;
 	}
 }
 /*

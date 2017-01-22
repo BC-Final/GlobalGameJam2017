@@ -36,7 +36,12 @@ public class BaseProjectile : MonoBehaviour {
 
 					//force.y = force.y * 2;
 					force.Normalize();
+<<<<<<< HEAD
+					hit.gameObject.GetComponent<Rigidbody>().AddForce(force * 10000 * forcePerc);
+=======
+					Debug.Log(forcePerc);
 					hit.gameObject.GetComponent<Rigidbody>().AddForce(force * 15000 * forcePerc);
+>>>>>>> a0f4e7194d0849194f6de9b7ee3b5ecf31c39701
 				}
 			}
 			GameObject.Destroy(this.gameObject);
