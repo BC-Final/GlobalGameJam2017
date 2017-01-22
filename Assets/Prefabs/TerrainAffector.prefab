@@ -59,7 +59,7 @@ MonoBehaviour:
   _waveHeight: 3
   _waveLength: 1
   _moveInwards: 1
-  _damagePerS: 10
+  _damagePerS: 20
 --- !u!114 &114568269600706056
 MonoBehaviour:
   m_ObjectHideFlags: 1

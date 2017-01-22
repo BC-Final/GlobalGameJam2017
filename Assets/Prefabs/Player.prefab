@@ -41,7 +41,6 @@ GameObject:
   - component: {fileID: 135253863332120334}
   - component: {fileID: 23047215497138076}
   - component: {fileID: 54553251836516660}
-  - component: {fileID: 114209662162856818}
   - component: {fileID: 114554513149909284}
   - component: {fileID: 136317643525026106}
   - component: {fileID: 114903475935235330}
@@ -90,8 +89,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1252765065584850}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.03, y: 9.82, z: 15.133066}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.2, y: 15.1, z: -17}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4719770228967708}
@@ -214,22 +213,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114209662162856818
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1252765065584850}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdde38a74a01d774a99f9715f0940239, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  maxSpeed: 5
-  grip: 5
-  xzInertia: 0
-  tilt: 0
 --- !u!114 &114482777635539202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -266,13 +249,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireButton: Fire1
-  _shotOffset: {x: 0, y: 0, z: 0}
+  _shotOffset: {x: 0, y: -0.5, z: 0}
   ammo: 0
-  maxAmmo: 3
-  cooldown: 1
+  maxAmmo: 5
+  cooldown: 0.7
   _icon: {fileID: 0}
   _projectilePrefab: {fileID: 1290384436171784, guid: a24c6cd8a95c70e4d86aa1547224a302,
     type: 2}
+  force: 3000
+  speed: 10
   _bpm: 130
 --- !u!114 &114903475935235330
 MonoBehaviour:
@@ -290,7 +275,9 @@ MonoBehaviour:
   speed: 10
   gravity: 10
   maxVelocityChange: 10
-  maxVelocityChangeInAir: 30
+  airControlPercent: 0
+  airControlThreshold: 5
+  airControlLowCap: 0.05
   canJump: 0
   jumpHeight: 2
   grounded: 0
@@ -306,7 +293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireButton: Fire2
-  _shotOffset: {x: 0, y: 0, z: 0}
+  _shotOffset: {x: 0, y: -1, z: 0}
   ammo: 0
   maxAmmo: 1
   cooldown: 10

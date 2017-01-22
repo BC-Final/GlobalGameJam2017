@@ -69,7 +69,6 @@ public class CharacterControls : MonoBehaviour
 			//// Apply a force that attempts to reach our target velocity
 			Vector3 velocity = GetComponent<Rigidbody>().velocity;
 			Vector3 velocityChange = (targetVelocity - velocity);
-			Debug.Log("Vel : " + velocity.y);
 			//velocityChange.x = Mathf.Clamp(velocityChange.x, -airControlPercent * airControlPercent / 100 * Mathf.Clamp(velocity.magnitude / airControlThreshold, 0, 1), airControlPercent * airControlPercent / 100 * Mathf.Clamp(velocity.magnitude / airControlThreshold, 0, 1));
 			//velocityChange.z = Mathf.Clamp(velocityChange.z, -airControlPercent * airControlPercent / 100 * Mathf.Clamp(velocity.magnitude / airControlThreshold, 0, 1), airControlPercent * airControlPercent / 100 * Mathf.Clamp(velocity.magnitude / airControlThreshold, 0, 1));
 			velocityChange.x = Mathf.Clamp(velocityChange.x * (Mathf.Clamp(1 - Mathf.Clamp(velocity.magnitude / airControlThreshold, 0, 1), airControlLowCap, 1)), -maxVelocityChange, maxVelocityChange);

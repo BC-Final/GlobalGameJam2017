@@ -41,7 +41,6 @@ GameObject:
   - component: {fileID: 135479629409790174}
   - component: {fileID: 23660825128144516}
   - component: {fileID: 54416834308659938}
-  - component: {fileID: 114850473345086258}
   - component: {fileID: 114449056594927714}
   - component: {fileID: 136140468940026102}
   - component: {fileID: 114956606573987200}
@@ -90,8 +89,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1269974679287666}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.9962463, y: 20.024376, z: 4.5518703}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 16.2, y: 11.6, z: -15}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4500172214873190}
@@ -226,7 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireButton: Fire2_2
-  _shotOffset: {x: 0, y: 0, z: 0}
+  _shotOffset: {x: 0, y: -1, z: 0}
   ammo: 0
   maxAmmo: 1
   cooldown: 10
@@ -261,30 +260,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireButton: Fire1_2
-  _shotOffset: {x: 0, y: 0, z: 0}
+  _shotOffset: {x: 0, y: -0.5, z: 0}
   ammo: 0
   maxAmmo: 3
   cooldown: 1
   _icon: {fileID: 0}
   _projectilePrefab: {fileID: 1290384436171784, guid: a24c6cd8a95c70e4d86aa1547224a302,
     type: 2}
+  force: 3000
+  speed: 10
   _bpm: 130
---- !u!114 &114850473345086258
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1269974679287666}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdde38a74a01d774a99f9715f0940239, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  maxSpeed: 5
-  grip: 5
-  xzInertia: 0
-  tilt: 0
 --- !u!114 &114956606573987200
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -301,7 +286,9 @@ MonoBehaviour:
   speed: 10
   gravity: 10
   maxVelocityChange: 10
-  maxVelocityChangeInAir: 30
+  airControlPercent: 0
+  airControlThreshold: 5
+  airControlLowCap: 0.05
   canJump: 0
   jumpHeight: 2
   grounded: 0
