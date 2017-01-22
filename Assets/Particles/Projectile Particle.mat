@@ -6,9 +6,9 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: lambert15SG
-  m_Shader: {fileID: 4800000, guid: fd1b0c2328cad6942aa89eb15af421f0, type: 3}
-  m_ShaderKeywords: _EMISSION _EMISSION_TEXTURED _WETNESS_NONE
+  m_Name: Projectile Particle
+  m_Shader: {fileID: 202, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _ALPHABLEND_ON _EMISSION _EMISSION_ANIMATED _WETNESS_NONE
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -54,13 +54,13 @@ Material:
     - first:
         name: _EmissionMap
       second:
-        m_Texture: {fileID: 2800000, guid: 3d8675433a508ec47b8f895201eacf20, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2ed400c9370665844b393cd6086b1830, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 2ed400c9370665844b393cd6086b1830, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -71,12 +71,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     - first:
         name: _MetallicGlossMap
-      second:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - first:
-        name: _MetallicGlossMap2
       second:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -154,7 +148,25 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
+        name: _SpecGlossMap
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _SpecGlossMap2
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
         name: _SpecularRGBGlossADetail
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _WavingTex
       second:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -172,6 +184,9 @@ Material:
     - first:
         name: _BumpScale2
       second: 1
+    - first:
+        name: _ColorMultiplier
+      second: 100
     - first:
         name: _CurvatureCustomU
       second: 0
@@ -246,13 +261,28 @@ Material:
       second: 1
     - first:
         name: _DstBlend
-      second: 0
+      second: 10
     - first:
         name: _EmissionPulsateSpeed
-      second: 6.81
+      second: 5.48
     - first:
         name: _FlowCycleScale
       second: 2
+    - first:
+        name: _FresnelExponent
+      second: 4
+    - first:
+        name: _FresnelExponentTop
+      second: 1
+    - first:
+        name: _FresnelOffset
+      second: 0
+    - first:
+        name: _FresnelOffsetTop
+      second: 0
+    - first:
+        name: _FresnelTextureOffset
+      second: 0.3
     - first:
         name: _Frost
       second: 0
@@ -294,7 +324,7 @@ Material:
       second: 0
     - first:
         name: _Glossiness
-      second: 0
+      second: 0.5
     - first:
         name: _Glossiness2
       second: 1
@@ -302,20 +332,20 @@ Material:
         name: _GlossyReflections
       second: 1
     - first:
+        name: _InvFade
+      second: 3
+    - first:
         name: _MainShown
       second: 1
     - first:
         name: _Metallic
       second: 0
     - first:
-        name: _Metallic2
-      second: 1
-    - first:
         name: _MinPulseBrightness
-      second: 0.611
+      second: 0.466
     - first:
         name: _Mode
-      second: 0
+      second: 2
     - first:
         name: _OcclusionStrength
       second: 1
@@ -375,7 +405,7 @@ Material:
       second: 0
     - first:
         name: _PulsateEmission
-      second: 0
+      second: 1
     - first:
         name: _RainIntensity
       second: 1
@@ -501,7 +531,7 @@ Material:
       second: 1
     - first:
         name: _SrcBlend
-      second: 1
+      second: 5
     - first:
         name: _Tan2ObjCustomU
       second: 1
@@ -623,8 +653,11 @@ Material:
         name: _WetnessUVMult
       second: 1
     - first:
+        name: _YBottomOffset
+      second: 0
+    - first:
         name: _ZWrite
-      second: 1
+      second: 0
     - first:
         name: maxDist
       second: 10
@@ -633,8 +666,17 @@ Material:
       second: 1
     m_Colors:
     - first:
+        name: _Amp
+      second: {r: 0.1, g: 0.1, b: 0.1, a: 0}
+    - first:
+        name: _AmpVertex
+      second: {r: 0, g: 0, b: 1, a: 0.1}
+    - first:
+        name: _AnimSpeed
+      second: {r: 0.1, g: 0.1, b: 0.1, a: 0}
+    - first:
         name: _Color
-      second: {r: 0.07, g: 0.18, b: 0.15, a: 1}
+      second: {r: 1, g: 1, b: 1, a: 1}
     - first:
         name: _Color2
       second: {r: 1, g: 1, b: 1, a: 1}
@@ -658,7 +700,10 @@ Material:
       second: {r: 0, g: 0, b: 0, a: 0}
     - first:
         name: _EmissionColor
-      second: {r: 1, g: 0.51724136, b: 0, a: 1}
+      second: {r: 1.803, g: 1.803, b: 1.803, a: 1}
+    - first:
+        name: _Freq
+      second: {r: 0.1, g: 0.1, b: 0.1, a: 0}
     - first:
         name: _GlitterColor
       second: {r: 0.8, g: 0.8, b: 0.8, a: 0.2}
@@ -684,8 +729,17 @@ Material:
         name: _SnowTranslucencyColor
       second: {r: 0.75, g: 1, b: 1, a: 1}
     - first:
+        name: _SpecColor
+      second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
+        name: _SpecColor2
+      second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
         name: _Tan2ObjectMultOffset
       second: {r: 0, g: 0, b: 1, a: 1}
+    - first:
+        name: _TintColor
+      second: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
     - first:
         name: _TranslucencyColor
       second: {r: 1, g: 1, b: 1, a: 1}
