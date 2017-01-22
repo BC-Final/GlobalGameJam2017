@@ -1,0 +1,525 @@
+fileFormatVersion: 2
+guid: 52c6cda1f1b144a4b884823745161ed9
+timeCreated: 1485035361
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: DJ_Warrior_Mesh
+    100002: //RootNode
+    100004: Head
+    100006: HeadNub
+    100008: Jaw
+    100010: L_Clavicle
+    100012: L_ClavicleNub
+    100014: L_Ellbow
+    100016: L_Finger01
+    100018: L_Finger02
+    100020: L_Foot
+    100022: L_Hand
+    100024: L_LowerArm
+    100026: L_LowerArmTwist
+    100028: L_LowerLegg
+    100030: L_Thumb01
+    100032: L_Thumb02
+    100034: L_Thumb03
+    100036: L_Toe
+    100038: L_ToeNub
+    100040: L_UpperArm
+    100042: L_UpperLeg
+    100044: Neck
+    100046: R_Clavicle
+    100048: R_ClavicleNub
+    100050: R_Ellbow
+    100052: R_Finger01
+    100054: R_Finger02
+    100056: R_Foot
+    100058: R_Hand
+    100060: R_LowerArm
+    100062: R_LowerLegg
+    100064: R_Thumb01
+    100066: R_Thumb02
+    100068: R_Thumb03
+    100070: R_Toe
+    100072: R_ToeNub
+    100074: R_UpperArm
+    100076: R_UpperLeg
+    100078: R_Wrist
+    100080: Spline_01
+    100082: Spline_02
+    100084: Spline_03
+    100086: Spline_04
+    100088: transform14
+    400000: DJ_Warrior_Mesh
+    400002: //RootNode
+    400004: Head
+    400006: HeadNub
+    400008: Jaw
+    400010: L_Clavicle
+    400012: L_ClavicleNub
+    400014: L_Ellbow
+    400016: L_Finger01
+    400018: L_Finger02
+    400020: L_Foot
+    400022: L_Hand
+    400024: L_LowerArm
+    400026: L_LowerArmTwist
+    400028: L_LowerLegg
+    400030: L_Thumb01
+    400032: L_Thumb02
+    400034: L_Thumb03
+    400036: L_Toe
+    400038: L_ToeNub
+    400040: L_UpperArm
+    400042: L_UpperLeg
+    400044: Neck
+    400046: R_Clavicle
+    400048: R_ClavicleNub
+    400050: R_Ellbow
+    400052: R_Finger01
+    400054: R_Finger02
+    400056: R_Foot
+    400058: R_Hand
+    400060: R_LowerArm
+    400062: R_LowerLegg
+    400064: R_Thumb01
+    400066: R_Thumb02
+    400068: R_Thumb03
+    400070: R_Toe
+    400072: R_ToeNub
+    400074: R_UpperArm
+    400076: R_UpperLeg
+    400078: R_Wrist
+    400080: Spline_01
+    400082: Spline_02
+    400084: Spline_03
+    400086: Spline_04
+    400088: transform14
+    4300000: DJ_Warrior_Mesh
+    7400000: Idle
+    7400002: Hover
+    7400004: Jump
+    9500000: //RootNode
+    13700000: DJ_Warrior_Mesh
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 11
+      lastFrame: 51
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: DJ_Warrior_Mesh
+        weight: 1
+      - path: Spline_01
+        weight: 1
+      - path: Spline_01/L_UpperLeg
+        weight: 1
+      - path: Spline_01/L_UpperLeg/L_LowerLegg
+        weight: 1
+      - path: Spline_01/L_UpperLeg/L_LowerLegg/L_Foot
+        weight: 1
+      - path: Spline_01/L_UpperLeg/L_LowerLegg/L_Foot/L_Toe
+        weight: 1
+      - path: Spline_01/L_UpperLeg/L_LowerLegg/L_Foot/L_Toe/L_ToeNub
+        weight: 1
+      - path: Spline_01/Spline_02
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/L_Clavicle
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/L_Clavicle/L_ClavicleNub
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/L_Clavicle/L_ClavicleNub/L_UpperArm
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Ellbow
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Ellbow/L_LowerArm
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Ellbow/L_LowerArm/L_LowerArmTwist
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Ellbow/L_LowerArm/L_LowerArmTwist/L_Hand
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Ellbow/L_LowerArm/L_LowerArmTwist/L_Hand/L_Finger01
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Ellbow/L_LowerArm/L_LowerArmTwist/L_Hand/L_Finger01/L_Finger02
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Ellbow/L_LowerArm/L_LowerArmTwist/L_Hand/L_Thumb01
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Ellbow/L_LowerArm/L_LowerArmTwist/L_Hand/L_Thumb01/L_Thumb02
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Ellbow/L_LowerArm/L_LowerArmTwist/L_Hand/L_Thumb01/L_Thumb02/L_Thumb03
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/R_Clavicle
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/R_Clavicle/R_ClavicleNub
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/R_Clavicle/R_ClavicleNub/R_UpperArm
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/R_Clavicle/R_ClavicleNub/R_UpperArm/R_Ellbow
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/R_Clavicle/R_ClavicleNub/R_UpperArm/R_Ellbow/R_LowerArm
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/R_Clavicle/R_ClavicleNub/R_UpperArm/R_Ellbow/R_LowerArm/R_Wrist
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/R_Clavicle/R_ClavicleNub/R_UpperArm/R_Ellbow/R_LowerArm/R_Wrist/R_Hand
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/R_Clavicle/R_ClavicleNub/R_UpperArm/R_Ellbow/R_LowerArm/R_Wrist/R_Hand/R_Finger01
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/R_Clavicle/R_ClavicleNub/R_UpperArm/R_Ellbow/R_LowerArm/R_Wrist/R_Hand/R_Finger01/R_Finger02
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/R_Clavicle/R_ClavicleNub/R_UpperArm/R_Ellbow/R_LowerArm/R_Wrist/R_Hand/R_Thumb01
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/R_Clavicle/R_ClavicleNub/R_UpperArm/R_Ellbow/R_LowerArm/R_Wrist/R_Hand/R_Thumb01/R_Thumb02
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/R_Clavicle/R_ClavicleNub/R_UpperArm/R_Ellbow/R_LowerArm/R_Wrist/R_Hand/R_Thumb01/R_Thumb02/R_Thumb03
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/Spline_04
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/Spline_04/Neck
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/Spline_04/Neck/Head
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/Spline_04/Neck/Head/HeadNub
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/Spline_04/Neck/Head/Jaw
+        weight: 1
+      - path: Spline_01/transform14
+        weight: 1
+      - path: Spline_01/transform14/R_UpperLeg
+        weight: 1
+      - path: Spline_01/transform14/R_UpperLeg/R_LowerLegg
+        weight: 1
+      - path: Spline_01/transform14/R_UpperLeg/R_LowerLegg/R_Foot
+        weight: 1
+      - path: Spline_01/transform14/R_UpperLeg/R_LowerLegg/R_Foot/R_Toe
+        weight: 1
+      - path: Spline_01/transform14/R_UpperLeg/R_LowerLegg/R_Foot/R_Toe/R_ToeNub
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hover
+      takeName: Take 001
+      firstFrame: 55
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: DJ_Warrior_Mesh
+        weight: 1
+      - path: Spline_01
+        weight: 1
+      - path: Spline_01/L_UpperLeg
+        weight: 1
+      - path: Spline_01/L_UpperLeg/L_LowerLegg
+        weight: 1
+      - path: Spline_01/L_UpperLeg/L_LowerLegg/L_Foot
+        weight: 1
+      - path: Spline_01/L_UpperLeg/L_LowerLegg/L_Foot/L_Toe
+        weight: 1
+      - path: Spline_01/L_UpperLeg/L_LowerLegg/L_Foot/L_Toe/L_ToeNub
+        weight: 1
+      - path: Spline_01/Spline_02
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/L_Clavicle
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/L_Clavicle/L_ClavicleNub
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/L_Clavicle/L_ClavicleNub/L_UpperArm
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Ellbow
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Ellbow/L_LowerArm
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Ellbow/L_LowerArm/L_LowerArmTwist
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Ellbow/L_LowerArm/L_LowerArmTwist/L_Hand
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Ellbow/L_LowerArm/L_LowerArmTwist/L_Hand/L_Finger01
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Ellbow/L_LowerArm/L_LowerArmTwist/L_Hand/L_Finger01/L_Finger02
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Ellbow/L_LowerArm/L_LowerArmTwist/L_Hand/L_Thumb01
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Ellbow/L_LowerArm/L_LowerArmTwist/L_Hand/L_Thumb01/L_Thumb02
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Ellbow/L_LowerArm/L_LowerArmTwist/L_Hand/L_Thumb01/L_Thumb02/L_Thumb03
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/R_Clavicle
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/R_Clavicle/R_ClavicleNub
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/R_Clavicle/R_ClavicleNub/R_UpperArm
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/R_Clavicle/R_ClavicleNub/R_UpperArm/R_Ellbow
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/R_Clavicle/R_ClavicleNub/R_UpperArm/R_Ellbow/R_LowerArm
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/R_Clavicle/R_ClavicleNub/R_UpperArm/R_Ellbow/R_LowerArm/R_Wrist
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/R_Clavicle/R_ClavicleNub/R_UpperArm/R_Ellbow/R_LowerArm/R_Wrist/R_Hand
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/R_Clavicle/R_ClavicleNub/R_UpperArm/R_Ellbow/R_LowerArm/R_Wrist/R_Hand/R_Finger01
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/R_Clavicle/R_ClavicleNub/R_UpperArm/R_Ellbow/R_LowerArm/R_Wrist/R_Hand/R_Finger01/R_Finger02
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/R_Clavicle/R_ClavicleNub/R_UpperArm/R_Ellbow/R_LowerArm/R_Wrist/R_Hand/R_Thumb01
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/R_Clavicle/R_ClavicleNub/R_UpperArm/R_Ellbow/R_LowerArm/R_Wrist/R_Hand/R_Thumb01/R_Thumb02
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/R_Clavicle/R_ClavicleNub/R_UpperArm/R_Ellbow/R_LowerArm/R_Wrist/R_Hand/R_Thumb01/R_Thumb02/R_Thumb03
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/Spline_04
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/Spline_04/Neck
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/Spline_04/Neck/Head
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/Spline_04/Neck/Head/HeadNub
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/Spline_04/Neck/Head/Jaw
+        weight: 1
+      - path: Spline_01/transform14
+        weight: 1
+      - path: Spline_01/transform14/R_UpperLeg
+        weight: 1
+      - path: Spline_01/transform14/R_UpperLeg/R_LowerLegg
+        weight: 1
+      - path: Spline_01/transform14/R_UpperLeg/R_LowerLegg/R_Foot
+        weight: 1
+      - path: Spline_01/transform14/R_UpperLeg/R_LowerLegg/R_Foot/R_Toe
+        weight: 1
+      - path: Spline_01/transform14/R_UpperLeg/R_LowerLegg/R_Foot/R_Toe/R_ToeNub
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Jump
+      takeName: Take 001
+      firstFrame: 85
+      lastFrame: 125
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: DJ_Warrior_Mesh
+        weight: 1
+      - path: Spline_01
+        weight: 1
+      - path: Spline_01/L_UpperLeg
+        weight: 1
+      - path: Spline_01/L_UpperLeg/L_LowerLegg
+        weight: 1
+      - path: Spline_01/L_UpperLeg/L_LowerLegg/L_Foot
+        weight: 1
+      - path: Spline_01/L_UpperLeg/L_LowerLegg/L_Foot/L_Toe
+        weight: 1
+      - path: Spline_01/L_UpperLeg/L_LowerLegg/L_Foot/L_Toe/L_ToeNub
+        weight: 1
+      - path: Spline_01/Spline_02
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/L_Clavicle
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/L_Clavicle/L_ClavicleNub
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/L_Clavicle/L_ClavicleNub/L_UpperArm
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Ellbow
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Ellbow/L_LowerArm
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Ellbow/L_LowerArm/L_LowerArmTwist
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Ellbow/L_LowerArm/L_LowerArmTwist/L_Hand
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Ellbow/L_LowerArm/L_LowerArmTwist/L_Hand/L_Finger01
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Ellbow/L_LowerArm/L_LowerArmTwist/L_Hand/L_Finger01/L_Finger02
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Ellbow/L_LowerArm/L_LowerArmTwist/L_Hand/L_Thumb01
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Ellbow/L_LowerArm/L_LowerArmTwist/L_Hand/L_Thumb01/L_Thumb02
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/L_Clavicle/L_ClavicleNub/L_UpperArm/L_Ellbow/L_LowerArm/L_LowerArmTwist/L_Hand/L_Thumb01/L_Thumb02/L_Thumb03
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/R_Clavicle
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/R_Clavicle/R_ClavicleNub
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/R_Clavicle/R_ClavicleNub/R_UpperArm
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/R_Clavicle/R_ClavicleNub/R_UpperArm/R_Ellbow
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/R_Clavicle/R_ClavicleNub/R_UpperArm/R_Ellbow/R_LowerArm
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/R_Clavicle/R_ClavicleNub/R_UpperArm/R_Ellbow/R_LowerArm/R_Wrist
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/R_Clavicle/R_ClavicleNub/R_UpperArm/R_Ellbow/R_LowerArm/R_Wrist/R_Hand
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/R_Clavicle/R_ClavicleNub/R_UpperArm/R_Ellbow/R_LowerArm/R_Wrist/R_Hand/R_Finger01
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/R_Clavicle/R_ClavicleNub/R_UpperArm/R_Ellbow/R_LowerArm/R_Wrist/R_Hand/R_Finger01/R_Finger02
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/R_Clavicle/R_ClavicleNub/R_UpperArm/R_Ellbow/R_LowerArm/R_Wrist/R_Hand/R_Thumb01
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/R_Clavicle/R_ClavicleNub/R_UpperArm/R_Ellbow/R_LowerArm/R_Wrist/R_Hand/R_Thumb01/R_Thumb02
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/R_Clavicle/R_ClavicleNub/R_UpperArm/R_Ellbow/R_LowerArm/R_Wrist/R_Hand/R_Thumb01/R_Thumb02/R_Thumb03
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/Spline_04
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/Spline_04/Neck
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/Spline_04/Neck/Head
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/Spline_04/Neck/Head/HeadNub
+        weight: 1
+      - path: Spline_01/Spline_02/Spline_03/Spline_04/Neck/Head/Jaw
+        weight: 1
+      - path: Spline_01/transform14
+        weight: 1
+      - path: Spline_01/transform14/R_UpperLeg
+        weight: 1
+      - path: Spline_01/transform14/R_UpperLeg/R_LowerLegg
+        weight: 1
+      - path: Spline_01/transform14/R_UpperLeg/R_LowerLegg/R_Foot
+        weight: 1
+      - path: Spline_01/transform14/R_UpperLeg/R_LowerLegg/R_Foot/R_Toe
+        weight: 1
+      - path: Spline_01/transform14/R_UpperLeg/R_LowerLegg/R_Foot/R_Toe/R_ToeNub
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 23
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
