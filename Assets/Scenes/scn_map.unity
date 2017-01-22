@@ -5297,6 +5297,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 412367418}
+  - component: {fileID: 412367419}
   m_Layer: 0
   m_Name: Hexs Player One
   m_TagString: Untagged
@@ -5570,6 +5571,17 @@ Transform:
   m_Father: {fileID: 1478985787}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &412367419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 412367417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6e2a5f4701ae0442838cb225044ff73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &413913319
 Prefab:
   m_ObjectHideFlags: 0
@@ -18883,6 +18895,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1449463036}
+  - component: {fileID: 1449463037}
   m_Layer: 0
   m_Name: Hexs Player Two
   m_TagString: Untagged
@@ -19156,6 +19169,17 @@ Transform:
   m_Father: {fileID: 1478985787}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1449463037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1449463035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a14c64ea973bf34aa174997020878cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1450756124
 Prefab:
   m_ObjectHideFlags: 0
@@ -19455,8 +19479,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cubes: []
   Building: 0
-  _minMoveUpTime: 2
-  _maxMoveUpTime: 6
+  _minMoveUpTime: 0.5
+  _maxMoveUpTime: 2
   RespawnWave: {fileID: 660041225}
 --- !u!1001 &1484672607
 Prefab:

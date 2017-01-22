@@ -73,7 +73,7 @@ public class CharacterControls : MonoBehaviour
 			//velocityChange.z = Mathf.Clamp(velocityChange.z, -airControlPercent * airControlPercent / 100 * Mathf.Clamp(velocity.magnitude / airControlThreshold, 0, 1), airControlPercent * airControlPercent / 100 * Mathf.Clamp(velocity.magnitude / airControlThreshold, 0, 1));
 			velocityChange.x = Mathf.Clamp(velocityChange.x * (Mathf.Clamp(1 - Mathf.Clamp(velocity.magnitude / airControlThreshold, 0, 1), airControlLowCap, 1)), -maxVelocityChange, maxVelocityChange);
 			velocityChange.z = Mathf.Clamp(velocityChange.z * (Mathf.Clamp(1 - Mathf.Clamp(velocity.magnitude / airControlThreshold, 0, 1), airControlLowCap, 1)), -maxVelocityChange, maxVelocityChange);
-			if(velocity.y > 20)
+			if(velocity.y > 5)
 			{
 				velocityChange.y = Mathf.Clamp(velocityChange.y ,-maxVelocityChange, maxVelocityChange);
 			}else{

@@ -39,6 +39,8 @@ public class BaseProjectile : MonoBehaviour {
 					hit.gameObject.GetComponent<Rigidbody>().AddForce(force * 15000 * forcePerc);
 				}
 			}
+
+			FMODUnity.RuntimeManager.PlayOneShot("event:/bomb");
 			GameObject.Destroy(this.gameObject);
 		}
 		transform.Translate(0, 0, _speed * Time.deltaTime);

@@ -70,7 +70,7 @@ public class GameController : MonoBehaviour {
 		MusicManager.Instance.StartDeath();
 		LevelManager.Instance.RespawnWave.SetActive(true);
 		Timers.CreateTimer().SetCallback(() => FinishRestart()).SetTime(_destroyTime).Start().ResetOnFinish();
-		Timers.CreateTimer().SetCallback(() => LevelManager.Instance.Cubes.ForEach(x => x.Damage(1000.0f))).SetTime(1.0f).Start().ResetOnFinish();
+		Timers.CreateTimer().SetCallback(() => LevelManager.Instance.Cubes.ForEach(x => x.Damage(1000.0f, false))).SetTime(1.0f).Start().ResetOnFinish();
 		//TODO Maybe destroy the map by exploding it??
 	}
 

@@ -249,7 +249,7 @@ Material:
       second: 0
     - first:
         name: _EmissionPulsateSpeed
-      second: 6.81
+      second: 1.0838771
     - first:
         name: _FlowCycleScale
       second: 2

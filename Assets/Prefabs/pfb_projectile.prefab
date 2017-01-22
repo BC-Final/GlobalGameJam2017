@@ -160,6 +160,7 @@ MonoBehaviour:
   _waveLength: 1
   _moveInwards: 0
   _damagePerS: 0
+  _notForce: 0
 --- !u!114 &114400680786472058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -171,8 +172,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91dd5201d4fed9c45a49923f4a28a5ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 20
-  _lifeTime: 100
+  _speed: 100
+  _lifeTime: 5
   _force: 100
   owner: {fileID: 0}
 --- !u!135 &135681607280526718

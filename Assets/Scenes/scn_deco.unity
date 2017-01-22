@@ -166,6 +166,11 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 11146335}
+--- !u!4 &13973625 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4724389554692718, guid: 74e4ca6e5b314094bab5413e84e5d12d,
+    type: 2}
+  m_PrefabInternal: {fileID: 2050204833}
 --- !u!1 &57089281
 GameObject:
   m_ObjectHideFlags: 0
@@ -1374,8 +1379,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6a5c8e0f8108745b0b2e1d7705b1a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerOneRef: {fileID: 1476184564}
-  _playerTwoRef: {fileID: 1876927906}
+  _playerOneRef: {fileID: 13973625}
+  _playerTwoRef: {fileID: 838312728}
   _playerOneSpawnPoint: {fileID: 1678343745}
   _playerTwoSpawnPoint: {fileID: 186711650}
   _initialWaitTime: 14.77
@@ -1407,6 +1412,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shooters: 0
+--- !u!4 &838312728 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4725790212983900, guid: 2b2e2ac83de0e99498c1a5dd420fd9df,
+    type: 2}
+  m_PrefabInternal: {fileID: 1274275796}
 --- !u!1001 &851610055
 Prefab:
   m_ObjectHideFlags: 0
@@ -1959,6 +1969,51 @@ Prefab:
       propertyPath: _icon
       value: 
       objectReference: {fileID: 1760586128}
+    - target: {fileID: 114746103544897318, guid: 2b2e2ac83de0e99498c1a5dd420fd9df,
+        type: 2}
+      propertyPath: _shotOffset.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114746103544897318, guid: 2b2e2ac83de0e99498c1a5dd420fd9df,
+        type: 2}
+      propertyPath: ammo
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114746103544897318, guid: 2b2e2ac83de0e99498c1a5dd420fd9df,
+        type: 2}
+      propertyPath: maxAmmo
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114746103544897318, guid: 2b2e2ac83de0e99498c1a5dd420fd9df,
+        type: 2}
+      propertyPath: cooldown
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114746103544897318, guid: 2b2e2ac83de0e99498c1a5dd420fd9df,
+        type: 2}
+      propertyPath: _bpm
+      value: 260
+      objectReference: {fileID: 0}
+    - target: {fileID: 114746103544897318, guid: 2b2e2ac83de0e99498c1a5dd420fd9df,
+        type: 2}
+      propertyPath: speed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114209077386952504, guid: 2b2e2ac83de0e99498c1a5dd420fd9df,
+        type: 2}
+      propertyPath: _speed
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 114209077386952504, guid: 2b2e2ac83de0e99498c1a5dd420fd9df,
+        type: 2}
+      propertyPath: maxAmmo
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114209077386952504, guid: 2b2e2ac83de0e99498c1a5dd420fd9df,
+        type: 2}
+      propertyPath: _lifeTime
+      value: 1.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b2e2ac83de0e99498c1a5dd420fd9df, type: 2}
   m_IsPrefabParent: 0
@@ -2505,12 +2560,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 715704712}
   - {fileID: 892464517}
   - {fileID: 1207121594}
   - {fileID: 1633228773}
   - {fileID: 719760386}
-  - {fileID: 967406385}
   - {fileID: 185612106}
   - {fileID: 1738030797}
   - {fileID: 1613670401}
@@ -3401,6 +3454,31 @@ Prefab:
         type: 2}
       propertyPath: ammo
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114646288402710566, guid: 74e4ca6e5b314094bab5413e84e5d12d,
+        type: 2}
+      propertyPath: _shotOffset.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114646288402710566, guid: 74e4ca6e5b314094bab5413e84e5d12d,
+        type: 2}
+      propertyPath: speed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114956514924900720, guid: 74e4ca6e5b314094bab5413e84e5d12d,
+        type: 2}
+      propertyPath: _speed
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 114956514924900720, guid: 74e4ca6e5b314094bab5413e84e5d12d,
+        type: 2}
+      propertyPath: maxAmmo
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114956514924900720, guid: 74e4ca6e5b314094bab5413e84e5d12d,
+        type: 2}
+      propertyPath: _lifeTime
+      value: 1.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 74e4ca6e5b314094bab5413e84e5d12d, type: 2}

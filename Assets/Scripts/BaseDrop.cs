@@ -55,6 +55,7 @@ public class BaseDrop : PlayerAbility
 
 	public override void Shoot()
 	{
+		FMODUnity.RuntimeManager.PlayOneShot("event:/projectile");
 		base.Shoot();
 		GameObject go = GameObject.Instantiate(_projectilePrefab, transform.position + _shotOffset, transform.rotation);
 		BaseProjectile bullet = go.GetComponent<BaseProjectile>();

@@ -52,13 +52,23 @@ public class MapCube : MonoBehaviour {
 		_startHeight = _rigidbody.position.y;
 	}
 
-	public void Damage (float pDamage) {
+	private bool dead = false;
+
+	public void Damage (float pDamage, bool pSound = true) {
 		_health -= pDamage;
 
 		if (_health <= 0.0f) {
 			_rigidbody.isKinematic = false;
 			_rigidbody.useGravity = true;
-			_rigidbody.velocity = new Vector3(_rigidbody.velocity.x, 0.0f, _rigidbody.velocity.z);
+
+			if(_rigidbody.velocity.y > 0.0f)
+				_rigidbody.velocity = new Vector3(_rigidbody.velocity.x, 0.0f, _rigidbody.velocity.z);
+
+			if (pSound && !dead) {
+				FMODUnity.RuntimeManager.PlayOneShot("event:/quake");
+			}
+
+			dead = true;
 		}
 	}
 
