@@ -27,6 +27,9 @@ public class SphericalTerrainAffector : MonoBehaviour {
 	[SerializeField]
 	private float _damagePerS;
 
+	[SerializeField]
+	private bool _notForce;
+
 	private float _endTime;
 	private Dictionary<MapCube, float> _affectedCubes = new Dictionary<MapCube, float>();
 
@@ -43,20 +46,25 @@ public class SphericalTerrainAffector : MonoBehaviour {
 		_affectedCubes.Clear();
 
 		if (_endTime - Time.time > 0.0f || _duration < 0) {
-			foreach (MapCube c in LevelManager.Instance.Cubes) {
-				float dist = Vector3.Distance(c.ProbePosition.position, transform.position);
+			if (LevelManager.Instance != null) {
+				foreach (MapCube c in LevelManager.Instance.Cubes) {
+					float dist = Vector3.Distance(c.ProbePosition.position, transform.position);
 
-				if (dist < _radius) {
-					float angle = Vector3.Angle(c.ProbePosition.position - transform.position, transform.forward);
-					float sign = Mathf.Sign(Vector3.Dot(c.ProbePosition.position - transform.position, transform.right));
-					float finalAngle = sign * angle;
+					if (dist < _radius) {
+						float angle = Vector3.Angle(c.ProbePosition.position - transform.position, transform.forward);
+						float sign = Mathf.Sign(Vector3.Dot(c.ProbePosition.position - transform.position, transform.right));
+						float finalAngle = sign * angle;
 
-					if ((finalAngle <= _angle / 2f && finalAngle >= -_angle / 2f)) {
-						_affectedCubes.Add(c, dist);
-						c.StopFade();
+						if ((finalAngle <= _angle / 2f && finalAngle >= -_angle / 2f)) {
+							if (!_notForce || (_notForce && !c.Fade)) {
+								_affectedCubes.Add(c, dist);
+								c.StopFade();
+							}
+						}
 					}
 				}
 			}
+
 
 			foreach (KeyValuePair<MapCube, float> c in _affectedCubes) {
 				//pos.y = Mathf.Sin((-Time.time * _waveSpeed + c.Value) / _waveLength) *_waveHeight / c.Value;

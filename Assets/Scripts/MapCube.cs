@@ -15,7 +15,11 @@ public class MapCube : MonoBehaviour {
 	private bool _fade;
 	private float _startHeight;
 
-	private void Start () {
+	public bool Fade {
+		get { return _fade; }
+	}
+
+	private void Awake () {
 		ProbePosition = transform.parent.transform;
 		_rigidbody = GetComponent<Rigidbody>();
 	}
@@ -31,10 +35,8 @@ public class MapCube : MonoBehaviour {
 			float perc = _timer / _fadeTime;
 			float currentHeight = _startHeight * (1.0f - perc);
 
-			Vector3 pos = _rigidbody.position;
 			//pos.y = Mathf.Sin((-Time.time * _waveSpeed + c.Value) / _waveLength) *_waveHeight / c.Value;
-			pos.y = Mathf.Sin(Time.time * 10) * currentHeight;
-			_rigidbody.position = pos;
+			SetPosition(Mathf.Sin(Time.time * 10) * currentHeight);
 
 			//transform.position = Vector3.Lerp(_startHeight, 0.0f, perc);
 		}
@@ -56,10 +58,7 @@ public class MapCube : MonoBehaviour {
 		if (_health <= 0.0f) {
 			_rigidbody.isKinematic = false;
 			_rigidbody.useGravity = true;
-
-			if (_rigidbody.velocity.y > 0.0f) {
-				_rigidbody.velocity = new Vector3(_rigidbody.velocity.x, -_rigidbody.velocity.y, _rigidbody.velocity.z);
-			}
+			_rigidbody.velocity = new Vector3(_rigidbody.velocity.x, 0.0f, _rigidbody.velocity.z);
 		}
 	}
 

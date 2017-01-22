@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour {
 	[SerializeField]
-	private GameObject _playerOnePrefab;
 	private Transform _playerOneRef;
 
 	[SerializeField]
-	private GameObject _playerTwoPrefab;
 	private Transform _playerTwoRef;
 
 	[SerializeField]
@@ -35,6 +33,7 @@ public class GameController : MonoBehaviour {
 	private int _playerOnePoints;
 	private int _playerTwoPoints;
 
+
 	private void Start () {
 		//TODO Start the music
 
@@ -48,10 +47,11 @@ public class GameController : MonoBehaviour {
 	}
 
 	private void Update () {
-		if (_starting && _releaseTime - Time.time <= 0.0f) {
+		if (_starting && _releaseTime - Time.time <= 0.0f && _releaseTime != 0.0f) {
+			_releaseTime = 0.0f;
 			_starting = false;
 			//TODO Release Player Controllers
-		} else {
+		} else if(!_starting) {
 			if (_playerOneRef.position.y <= _deadHeight || _playerTwoRef.position.y <= _deadHeight) {
 				if (_playerOneRef.position.y > _playerTwoRef.position.y) {
 					_playerOnePoints++;
@@ -66,6 +66,16 @@ public class GameController : MonoBehaviour {
 
 	private void RestartLevel () {
 		_starting = true;
+		//TODO Restrict players movement
+		MusicManager.Instance.StartDeath();
+		LevelManager.Instance.RespawnWave.SetActive(true);
+		Timers.CreateTimer().SetCallback(() => FinishRestart()).SetTime(_destroyTime).Start().ResetOnFinish();
+		Timers.CreateTimer().SetCallback(() => LevelManager.Instance.Cubes.ForEach(x => x.Damage(1000.0f))).SetTime(1.0f).Start().ResetOnFinish();
+		//TODO Maybe destroy the map by exploding it??
+	}
+
+	private void FinishRestart () {
+		MusicManager.Instance.StopDeath();
 		_playerOneRef.position = _playerOneSpawnPoint.position;
 		_playerOneRef.rotation = _playerOneSpawnPoint.rotation;
 		_playerTwoRef.position = _playerTwoSpawnPoint.position;
@@ -73,14 +83,7 @@ public class GameController : MonoBehaviour {
 
 		_playerOneRef.GetComponentInChildren<Rigidbody>().velocity = Vector3.zero;
 		_playerTwoRef.GetComponentInChildren<Rigidbody>().velocity = Vector3.zero;
-		//TODO Restrict players movement
 
-		Timers.CreateTimer().SetCallback(() => FinishRestart()).SetTime(_destroyTime).Start();
-		LevelManager.Instance.Cubes.ForEach(x => x.Damage(1000.0f));
-		//TODO Maybe destroy the map by exploding it??
-	}
-
-	private void FinishRestart () {
 		_releaseTime = Time.time + _respawnWaitTime;
 		UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("scn_map");
 		UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("scn_map", UnityEngine.SceneManagement.LoadSceneMode.Additive);

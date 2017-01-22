@@ -25,6 +25,9 @@ public class LevelManager : MonoBehaviour {
 	[SerializeField]
 	private float _maxMoveUpTime;
 
+	[SerializeField]
+	public GameObject RespawnWave;
+
 	private void Start () {
 		Cubes.AddRange(GetComponentsInChildren<MapCube>());
 		Building = true;
