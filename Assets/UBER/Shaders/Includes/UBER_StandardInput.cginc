@@ -692,7 +692,7 @@ half3 Emission(float4 uv, fixed4 vertex_color, float2 _ddx, float2 _ddy, half sn
 //    #else
 	    half3 eCol=tex2Dp(_EmissionMap, emissionUV, _ddx, _ddy).a * tex2Dp(_EmissionMap, uv.xy, _ddx, _ddy).rgb;
 //    #endif
-	float pulsation=_PulsateEmission ? (_MinPulseBrightness + ( (sin((_Time.y*_EmissionPulsateSpeed)) + 1.0) * (1.0 - _MinPulseBrightness) ) / 2.0) : 1.0;
+	float pulsation=_PulsateEmission ? (_MinPulseBrightness + ( (sin((_Time.y*_EmissionPulsateSpeed*2*3.14159265)) + 1.0) * (1.0 - _MinPulseBrightness) ) / 2.0) : 1.0;
 
 	return eCol.rgb * _EmissionColor.rgb * pulsation;
 #elif defined(_EMISSION_TEXTURED)
